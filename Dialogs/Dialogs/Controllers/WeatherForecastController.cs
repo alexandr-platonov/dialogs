@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Dialogs.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -24,6 +23,7 @@ namespace Dialogs.Controllers
         }
 
         [HttpGet]
+        [Route("")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
