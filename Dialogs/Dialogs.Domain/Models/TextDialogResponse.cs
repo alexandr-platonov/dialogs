@@ -2,6 +2,11 @@
 {
     public class TextDialogResponse<T>
     {
+        public TextDialogResponse(string answerText)
+        {
+            AnswerText = answerText;
+        }
+
         public TextDialogResponse(T answer, string answerText)
         {
             AnswerText = answerText;
