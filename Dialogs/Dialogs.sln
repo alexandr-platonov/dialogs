@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dialogs", "Dialogs\Dialogs.csproj", "{DFA16D26-9CFC-4DB3-B212-FDF76FB5F063}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dialogs.Domain", "Dialogs.Domain\Dialogs.Domain.csproj", "{510B96EE-ABD9-4845-8F40-4F834A67F985}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DFA16D26-9CFC-4DB3-B212-FDF76FB5F063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFA16D26-9CFC-4DB3-B212-FDF76FB5F063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFA16D26-9CFC-4DB3-B212-FDF76FB5F063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{510B96EE-ABD9-4845-8F40-4F834A67F985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{510B96EE-ABD9-4845-8F40-4F834A67F985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{510B96EE-ABD9-4845-8F40-4F834A67F985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{510B96EE-ABD9-4845-8F40-4F834A67F985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
