@@ -5,9 +5,10 @@ namespace Dialogs.Domain.Models.HookahMixer
 {
     public class HookahMix
     {
-        public HookahMix(int id, params TobaccoMix[] tobaccos)
+        public HookahMix(int id, string name, params TobaccoMix[] tobaccos)
         {
             Id = id;
+            Name = name;
             Tobaccos = tobaccos.ToList();
         }
 

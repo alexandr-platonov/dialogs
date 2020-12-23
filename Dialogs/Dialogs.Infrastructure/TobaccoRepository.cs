@@ -13,11 +13,13 @@ namespace Dialogs.Infrastructure
             {
                 new HookahMix(
                     1,
+                    "Яблоко и апельсин",
                     new TobaccoMix(new Tobacco(1, "Яблоко"), 50),
                     new TobaccoMix(new Tobacco(2, "Апельсин"), 50)
                 ),
                 new HookahMix(
                     2,
+                    "Яблоко и кола",
                     new TobaccoMix(new Tobacco(1, "Яблоко"), 50),
                     new TobaccoMix(new Tobacco(3, "Кола"), 50)
                 ),

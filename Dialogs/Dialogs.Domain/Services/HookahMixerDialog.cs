@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Dialogs.Domain.Interfaces;
 using Dialogs.Domain.Interfaces.HookahMixer;
 using Dialogs.Domain.Models;
 using Dialogs.Domain.Models.HookahMixer;
@@ -17,13 +16,13 @@ namespace Dialogs.Domain.Services
             _tobaccoRepository = tobaccoRepository;
         }
 
-        public Task<TextDialogResponse<int>> Ask(TextDialogRequest<int> request)
+        public Task<TextDialogResponse<HookahMix>> Ask(TextDialogRequest<HookahMix> request)
         {
             var words = request.Command.Split(' ');
 
             if (words.All(string.IsNullOrEmpty))
             {
-                return Task.FromResult(new TextDialogResponse<int>("Какие вкусы у вас есть?"));
+                return Task.FromResult(new TextDialogResponse<HookahMix>("Какие вкусы у вас есть?"));
             }
 
             var mixes = _tobaccoRepository.GetHookahMixes();
@@ -45,7 +44,7 @@ namespace Dialogs.Domain.Services
             var suitableMixId = maxSuitableMixes.First().Key;
             var suitableMix = mixes.Single(x => x.Id == suitableMixId);
 
-            return Task.FromResult(new TextDialogResponse<int>(suitableMix.Id, $"Попробуй {suitableMix.Description}"));
+            return Task.FromResult(new TextDialogResponse<HookahMix>(suitableMix, $"Попробуй {suitableMix.Description}"));
         }
     }
 }

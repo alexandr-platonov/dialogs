@@ -1,11 +1,13 @@
+using AutoMapper;
 using Dialogs.Domain.Interfaces.HookahMixer;
 using Dialogs.Domain.Services;
 using Dialogs.Infrastructure;
+using Dialogs.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Dialogs
 {
@@ -30,6 +32,9 @@ namespace Dialogs
         {
             services.AddScoped<IHookahMixerDialog, HookahMixerDialog>();
             services.AddScoped<ITobaccoRepository, TobaccoRepository>();
+            services.AddScoped<IHookahMixerClient, HookahMixerClient>();
+
+            services.AddAutoMapper(typeof(ViewModelsMappingProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
