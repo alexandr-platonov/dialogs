@@ -2,15 +2,12 @@
 {
     public class AlisaClientRequest<T>
     {
-        public AlisaClientRequest(Session session, Request request, State<T> state, string version)
+        public AlisaClientRequest(Request request, State<T> state, string version)
         {
-            Session = session;
             Request = request;
             State = state;
             Version = version;
         }
-
-        public Session Session { get; }
 
         public Request Request { get; }
 

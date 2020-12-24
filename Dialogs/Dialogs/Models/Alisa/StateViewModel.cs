@@ -5,6 +5,6 @@ namespace Dialogs.Models.Alisa
     public class StateViewModel<T>
     {
         [JsonProperty("session")]
-        public T Session { get; set; }
+        public AlisaSaveDataViewModel<T> Session { get; set; }
     }
 }

@@ -2,11 +2,6 @@
 {
     public class TextDialogRequest<T>
     {
-        public TextDialogRequest(string command)
-        {
-            Command = command;
-        }
-
         public TextDialogRequest(string command, T previousAnswer)
         {
             Command = command;

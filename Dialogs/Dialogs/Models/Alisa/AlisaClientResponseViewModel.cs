@@ -1,19 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Dialogs.Models.Alisa
 {
     public class AlisaClientResponseViewModel<T>
     {
-        [JsonProperty("session")]
-        public SessionViewModel Session { get; set; }
+        [JsonPropertyName("response")]
+        public ResponseViewModel Response { get; set; }
 
-        [JsonProperty("response")]
-        public ResponseViewModel Response { get; set; } 
-        
-        [JsonProperty("session_state")]
-        public T SessionState { get; set; }
+        [JsonPropertyName("session_state")]
+        public AlisaSaveDataViewModel<T> SessionState { get; set; }
 
-        [JsonProperty("version")]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     }
 }

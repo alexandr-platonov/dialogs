@@ -5,7 +5,7 @@ using Dialogs.Domain.Interfaces.HookahMixer;
 using Dialogs.Domain.Models;
 using Dialogs.Domain.Models.HookahMixer;
 
-namespace Dialogs.Domain.Services
+namespace Dialogs.Domain.Services.HookahMixer
 {
     public class HookahMixerDialog : IHookahMixerDialog
     {
@@ -18,12 +18,12 @@ namespace Dialogs.Domain.Services
 
         public Task<TextDialogResponse<HookahMix>> Ask(TextDialogRequest<HookahMix> request)
         {
-            var words = request.Command.Split(' ');
-
-            if (words.All(string.IsNullOrEmpty))
+            if (string.IsNullOrEmpty(request.Command))
             {
                 return Task.FromResult(new TextDialogResponse<HookahMix>("Какие вкусы у вас есть?"));
             }
+
+            var words = request.Command.Split(' ');
 
             var mixes = _tobaccoRepository.GetHookahMixes();
 

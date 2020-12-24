@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Dialogs.Domain.Models.Alisa;
 using Dialogs.Domain.Models.HookahMixer;
 using Dialogs.Models.Alisa;
@@ -9,21 +10,13 @@ namespace Dialogs.Mapping
     {
         public ViewModelsMappingProfile()
         {
-            CreateMap<AlisaClientRequestViewModel<HookahMixViewModel>, AlisaClientRequest<HookahMix>>();
-            CreateMap<SessionViewModel, Session>();
+            CreateMap<AlisaClientRequestViewModel<HookahMix>, AlisaClientRequest<HookahMix>>();
             CreateMap<RequestViewModel, Request>();
-            CreateMap<NluViewModel, Nlu>();
-            CreateMap<StateViewModel<HookahMixViewModel>, State<HookahMix>>();
-            CreateMap<HookahMixViewModel, HookahMix>();
-            CreateMap<TobaccoMixViewModel, TobaccoMix>();
-            CreateMap<TobaccoViewModel, Tobacco>();
-
-            CreateMap<AlisaClientResponse<HookahMix>, AlisaClientResponseViewModel<HookahMixViewModel>>();
-            CreateMap<Session, SessionViewModel>();
+            CreateMap<StateViewModel<HookahMix>, State<HookahMix>>();
+            CreateMap<AlisaSaveDataViewModel<HookahMix>, AlisaSaveData<HookahMix>>();
+            CreateMap<AlisaClientResponse<HookahMix>, AlisaClientResponseViewModel<HookahMix>>();
+            CreateMap<AlisaSaveData<HookahMix>, AlisaSaveDataViewModel<HookahMix>>();
             CreateMap<Response, ResponseViewModel>();
-            CreateMap<HookahMix, HookahMixViewModel>();
-            CreateMap<TobaccoMix, TobaccoMixViewModel>();
-            CreateMap<Tobacco, TobaccoViewModel>();
         }
     }
 }

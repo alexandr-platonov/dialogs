@@ -17,20 +17,13 @@ namespace Dialogs.Domain.Services.Alisa
 
         public async Task<AlisaClientResponse<T>> Ask(AlisaClientRequest<T> alisaRequest)
         {
-            var textRequest = new TextDialogRequest<T>(alisaRequest.Request.Command, alisaRequest.State.Session);
+            var textRequest = new TextDialogRequest<T>(alisaRequest.Request.Command, alisaRequest.State.Session.Value);
             var textResponse = await _dialog.Ask(textRequest).ConfigureAwait(false);
 
-            var alisaResponse = new AlisaClientResponse<T>
-            {
-                Version = alisaRequest.Version,
-                Session = alisaRequest.Session,
-                Response = new Response
-                {
-                    Text = textResponse.AnswerText,
-                    EndSession = false
-                },
-                SessionState = textResponse.Answer
-            };
+            var alisaResponse = new AlisaClientResponse<T>(
+                new Response(textResponse.AnswerText), 
+                new AlisaSaveData<T>(textResponse.Answer),
+                alisaRequest.Version);
 
             return alisaResponse;
         }

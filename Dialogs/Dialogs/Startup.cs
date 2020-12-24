@@ -30,9 +30,9 @@ namespace Dialogs
 
         public void ConfigureAppServices(IServiceCollection services)
         {
+            services.AddScoped<IHookahMixerClient, HookahMixerClient>();
             services.AddScoped<IHookahMixerDialog, HookahMixerDialog>();
             services.AddScoped<ITobaccoRepository, TobaccoRepository>();
-            services.AddScoped<IHookahMixerClient, HookahMixerClient>();
 
             services.AddAutoMapper(typeof(ViewModelsMappingProfile));
         }

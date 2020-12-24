@@ -2,7 +2,7 @@
 using Dialogs.Domain.Interfaces.HookahMixer;
 using Dialogs.Domain.Models.HookahMixer;
 
-namespace Dialogs.Infrastructure
+namespace Dialogs.Infrastructure.Services
 {
     public class TobaccoRepository : ITobaccoRepository
     {

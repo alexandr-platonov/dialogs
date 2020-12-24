@@ -2,11 +2,11 @@
 {
     public class State<T>
     {
-        public State(T session)
+        public State(AlisaSaveData<T> session)
         {
             Session = session;
         }
 
-        public T Session { get; }
+        public AlisaSaveData<T> Session { get; }
     }
 }
