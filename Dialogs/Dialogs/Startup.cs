@@ -1,7 +1,9 @@
 using AutoMapper;
 using Dialogs.Domain.Interfaces.HookahMixer;
-using Dialogs.Domain.Services;
-using Dialogs.Infrastructure;
+using Dialogs.Domain.Interfaces.KinoRating;
+using Dialogs.Domain.Services.HookahMixer;
+using Dialogs.Domain.Services.KinoRating;
+using Dialogs.Infrastructure.Services;
 using Dialogs.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +35,10 @@ namespace Dialogs
             services.AddScoped<IHookahMixerClient, HookahMixerClient>();
             services.AddScoped<IHookahMixerDialog, HookahMixerDialog>();
             services.AddScoped<ITobaccoRepository, TobaccoRepository>();
+
+            services.AddScoped<IKinoRatingClient, KinoRatingClient>();
+            services.AddScoped<IKinoRatingDialog, KinoRatingDialog>();
+            services.AddScoped<IKinoRatingApi, OmdbApi>();
 
             services.AddAutoMapper(typeof(ViewModelsMappingProfile));
         }
